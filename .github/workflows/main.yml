@@ -32,7 +32,7 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
         
   build-and-analyze:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
