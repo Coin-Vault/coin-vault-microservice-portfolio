@@ -52,7 +52,7 @@ jobs:
           dotnet test
       
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1
+        uses: SonarSource/sonarcloud-github-action@master
         with:
           organization: coin-vault
           project: Coin-Vault_coin-vault-microservice-portfolio
