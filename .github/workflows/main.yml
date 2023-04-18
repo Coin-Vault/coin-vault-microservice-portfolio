@@ -52,6 +52,7 @@ jobs:
           dotnet test
       
   sonarcloud:
+    needs: [build-and-analyze]
     runs-on: ubuntu-latest
     steps:
       - name: SonarCloud Scan
