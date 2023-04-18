@@ -31,6 +31,33 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --verbosity normal
         
+  build-and-analyze:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.2
+      
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+      
+      - name: Restore NuGet packages
+        run: dotnet restore
+      
+      - name: Build and test
+        run: |
+          dotnet build
+          dotnet test
+      
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          organization: coin-vault
+          project: Coin-Vault_coin-vault-microservice-portfolio
+          token: ${{ secrets.SONAR_TOKEN }}
+        
   docker:
     needs: [build]
     runs-on: ubuntu-latest
