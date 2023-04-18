@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\Data",
+    "\\Dtos",
+    "\\EventProcessing",
+    "\\Models",
+    "\\Profiles",
+    "\\Properties"
   ],
-  "SelectedNode": "\\Profiles",
+  "SelectedNode": "\\PortfolioService.csproj",
   "PreviewInSolutionExplorer": false
 }

@@ -26,9 +26,9 @@ namespace PortfolioService.Data
             return _context.Portfolios.ToList();
         }
 
-        public Portfolio GetPortfolioById(int id)
+        public IEnumerable<Portfolio> GetPortfolioByUserId(int userId)
         {
-            return _context.Portfolios.FirstOrDefault(t => t.Id == id);
+            return _context.Portfolios.Where(t => t.UserId == userId);
         }
 
         public bool SaveChanges()

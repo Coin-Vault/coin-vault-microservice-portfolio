@@ -42,3 +42,5 @@ D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-micro
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\PortfolioService.pdb
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\PortfolioService.genruntimeconfig.cache
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\ref\PortfolioService.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\appsettings.Production.json
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\RabbitMQ.Client.dll

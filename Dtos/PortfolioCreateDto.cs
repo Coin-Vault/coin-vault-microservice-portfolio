@@ -5,12 +5,18 @@ namespace PortfolioService.Dtos
     public class PortfolioCreateDto
     {   
         [Required]
+        public int TradeId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
         public string? Name { get; set; }
 
         [Required]
-        public string? Amount { get; set; }
+        public double? Amount { get; set; }
         
         [Required]
-        public string? Price { get; set; }
+        public double? Price { get; set; }
     }
 }

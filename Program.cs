@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using PortfolioService.AsyncDataServices;
 using PortfolioService.Data;
+using PortfolioService.EventProcessing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IPortfolioRepo, PortfolioRepo>();    
 
 builder.Services.AddControllers();
+
+builder.Services.AddHostedService<MessageBusSubcriber>();
+
+builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

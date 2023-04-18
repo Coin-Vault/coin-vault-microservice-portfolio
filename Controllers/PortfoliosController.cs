@@ -8,12 +8,12 @@ namespace PortfolioService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PortfolioController : ControllerBase
+    public class PortfoliosController : ControllerBase
     {
         private readonly IPortfolioRepo _repository;
         private readonly IMapper _mapper;
 
-        public PortfolioController(IPortfolioRepo repository, IMapper mapper)
+        public PortfoliosController(IPortfolioRepo repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -29,13 +29,15 @@ namespace PortfolioService.Controllers
             return Ok(_mapper.Map<IEnumerable<PortfolioReadDto>>(trades));
         }
 
-        [HttpGet("{id}", Name = "GetPortfolioById")]
-        public ActionResult<PortfolioReadDto> GetPortfolioById(int id)
+        [HttpGet("{userId}", Name = "GetPortfolioByUserId")]
+        public ActionResult<IEnumerable<PortfolioReadDto>> GetPortfolioByUserId(int userId)
         {
-            var trade = _repository.GetPortfolioById(id);
+            Console.WriteLine($"Getting Portfolios For User: {userId}");
 
-            if (trade != null) {
-                return Ok(_mapper.Map<PortfolioReadDto>(trade));
+            var trades = _repository.GetPortfolioByUserId(userId);
+
+            if (trades != null) {
+                return Ok(_mapper.Map<IEnumerable<PortfolioReadDto>>(trades));
             }
 
             return NotFound();
@@ -50,7 +52,7 @@ namespace PortfolioService.Controllers
 
             var portfolioReadDto = _mapper.Map<PortfolioReadDto>(portfolioModel);
 
-            return CreatedAtRoute(nameof(GetPortfolioById), new { Id = portfolioReadDto.Id}, portfolioReadDto);
+            return CreatedAtRoute(nameof(GetPortfolioByUserId), new { Id = portfolioReadDto.Id}, portfolioReadDto);
         }
     }
 }

@@ -21,21 +21,27 @@ namespace PortfolioService.Data
                 context.Portfolios.AddRange(
                     new Portfolio() 
                     {
-                        Name = "TEST", 
-                        Amount = "TEST", 
-                        Price = "TEST"
+                        TradeId = 100, 
+                        UserId = 11111, 
+                        Name = "BITCOIN",
+                        Amount = 5.5,
+                        Price = 25555.5
                     },
                     new Portfolio()
                     {
-                        Name = "TEST", 
-                        Amount = "TEST", 
-                        Price = "TEST"
+                        TradeId = 101, 
+                        UserId = 22222, 
+                        Name = "BITCOIN",
+                        Amount = 5.5,
+                        Price = 25555.5
                     },
                     new Portfolio() 
                     {
-                        Name = "TEST", 
-                        Amount = "TEST", 
-                        Price = "TEST"
+                    	TradeId = 101, 
+                        UserId = 33333, 
+                        Name = "BITCOIN",
+                        Amount = 5.5,
+                        Price = 25555.5
                     }
                 );
 
