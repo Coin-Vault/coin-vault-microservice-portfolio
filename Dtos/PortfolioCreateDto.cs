@@ -8,7 +8,7 @@ namespace PortfolioService.Dtos
         public int TradeId { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public string? UserId { get; set; }
 
         [Required]
         public string? Name { get; set; }

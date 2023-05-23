@@ -21,26 +21,26 @@ namespace PortfolioService.Data
                 context.Portfolios.AddRange(
                     new Portfolio() 
                     {
-                        TradeId = 100, 
-                        UserId = 11111, 
+                        TradeId = 1, 
+                        UserId = "google-oauth2|107328215575499709402", 
                         Name = "BITCOIN",
-                        Amount = 5.5,
+                        Amount = 5,
                         Price = 25555.5
                     },
                     new Portfolio()
                     {
-                        TradeId = 101, 
-                        UserId = 22222, 
+                        TradeId = 2, 
+                        UserId = "google-oauth2|107328215575499709402",  
                         Name = "BITCOIN",
-                        Amount = 5.5,
+                        Amount = 10,
                         Price = 25555.5
                     },
                     new Portfolio() 
                     {
-                    	TradeId = 101, 
-                        UserId = 33333, 
+                    	TradeId = 3, 
+                        UserId = "google-oauth2|107328215575499709402",  
                         Name = "BITCOIN",
-                        Amount = 5.5,
+                        Amount = 15.5,
                         Price = 25555.5
                     }
                 );

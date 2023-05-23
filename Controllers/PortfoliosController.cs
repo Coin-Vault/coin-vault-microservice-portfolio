@@ -30,7 +30,7 @@ namespace PortfolioService.Controllers
         }
 
         [HttpGet("{userId}", Name = "GetPortfolioByUserId")]
-        public ActionResult<IEnumerable<PortfolioReadDto>> GetPortfolioByUserId(int userId)
+        public ActionResult<IEnumerable<PortfolioReadDto>> GetPortfolioByUserId(string userId)
         {
             Console.WriteLine($"Getting Portfolios For User: {userId}");
 

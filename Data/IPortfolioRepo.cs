@@ -6,7 +6,7 @@ namespace PortfolioService.Data
     {
         bool SaveChanges();
         IEnumerable<Portfolio> GetAllPortfolios();
-        IEnumerable<Portfolio> GetPortfolioByUserId(int userId);
+        IEnumerable<Portfolio> GetPortfolioByUserId(string userId);
         void CreatePortfolio(Portfolio portfolio);
     }
 }
