@@ -22,6 +22,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(opt => 
     opt.UseInMemoryDatabase("InMem"));
 
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
+{
+    build.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+}));
+
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
@@ -33,7 +39,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+app.UseCors("corspolicy");
 
 app.UseAuthorization();
 
