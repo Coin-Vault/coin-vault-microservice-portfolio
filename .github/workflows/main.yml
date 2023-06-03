@@ -10,21 +10,6 @@ on:
 jobs:
   microservice-portfolio:
       runs-on: ubuntu-latest
-
-      services:
-        rabbitmq:
-          image: rabbitmq:3.8
-          env:
-            RABBITMQ_DEFAULT_USER: guest
-            RABBITMQ_DEFAULT_PASS: guest
-          ports:
-            - 5672
-      
-        portfolio:
-          image: robfontys/coin-vault-microservice-portfolio:latest
-          ports:
-            - 5400:5400
-
       steps:
         - uses: actions/checkout@v3
       
@@ -38,12 +23,15 @@ jobs:
 
         - name: Build
           run: dotnet build --configuration Release --no-restore
+          
+        - run: docker-compose up -d coin-vault-microservice-portfolio
+        - name: Sleep for 30 seconds
+          uses: jakejarvis/wait-action@master
+          with:
+            time: '30s'
 
         - name: Test
           run: dotnet test --no-restore --verbosity normal
-          
-        - name: Run
-          run: dotnet run
           
   build:
     runs-on: ubuntu-latest
