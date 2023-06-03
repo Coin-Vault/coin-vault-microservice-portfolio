@@ -7,13 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<IPortfolioRepo, PortfolioRepo>();    
+builder.Services.AddScoped<IPortfolioRepo, PortfolioRepo>();   
 
 builder.Services.AddControllers();
 
 builder.Services.AddHostedService<MessageBusSubcriber>();
 
 builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
+builder.Services.AddSingleton<IMessageBusEncryption, MessageBusEncryption>(); 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

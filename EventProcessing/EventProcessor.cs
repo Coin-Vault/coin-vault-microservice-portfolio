@@ -1,4 +1,5 @@
 using AutoMapper;
+using PortfolioService.AsyncDataServices;
 using PortfolioService.Data;
 using PortfolioService.Dtos;
 using PortfolioService.Models;
@@ -8,17 +9,25 @@ namespace PortfolioService.EventProcessing
 {
     public class EventProcessor : IEventProcessor
     {
+        private readonly IConfiguration _configuration;
         private readonly IServiceScopeFactory _scopedFactory;
         private readonly IMapper _mapper;
 
-        public EventProcessor(IServiceScopeFactory scopeFactory, IMapper mapper)
+        private readonly IMessageBusEncryption _messageBusEncryption;
+
+        public EventProcessor(IServiceScopeFactory scopeFactory, IMapper mapper, IMessageBusEncryption messageBusEncryption, IConfiguration configuration)
         {
             _scopedFactory = scopeFactory;
             _mapper = mapper;
+
+            _messageBusEncryption = messageBusEncryption;
+            _configuration = configuration;
         }
 
         public void ProcessEvent(string message)
         {
+            message = _messageBusEncryption.DecryptString(_configuration["MessageEncryptionKey"], message);
+
             var eventType = DetermineEvent(message);
 
             switch(eventType)

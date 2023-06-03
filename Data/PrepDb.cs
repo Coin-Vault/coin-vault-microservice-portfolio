@@ -16,7 +16,7 @@ namespace PortfolioService.Data
         {
             if(!context.Portfolios.Any()) 
             {
-                Console.WriteLine("Seeding Data..."); 
+                Console.WriteLine("Seeding Data... new"); 
 
                 context.Portfolios.AddRange(
                     new Portfolio() 
@@ -49,7 +49,7 @@ namespace PortfolioService.Data
             }
             else 
             {
-                Console.WriteLine("Already Data (Portfolios) In the Database..."); 
+                Console.WriteLine("Already Data (Portfolios) In the Database...new"); 
             }
         }
     }
