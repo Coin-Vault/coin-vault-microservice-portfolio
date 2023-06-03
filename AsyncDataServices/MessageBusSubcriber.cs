@@ -26,7 +26,7 @@ namespace PortfolioService.AsyncDataServices
             var factory = new ConnectionFactory()
             {
                 Uri = new Uri(_configuration["RabbitMQUri"])
-            }
+            };
 
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
