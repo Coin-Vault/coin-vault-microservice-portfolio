@@ -21,7 +21,7 @@ jobs:
             - 5672
       
         portfolio:
-          image: robfontys/coin-vault-microservice-portfolio
+          image: robfontys/coin-vault-microservice-portfolio:latest
           ports:
             - 5400:5400
 
