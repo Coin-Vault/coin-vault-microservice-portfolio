@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  container-job:
+  microservice-portfolio:
       runs-on: ubuntu-latest
 
       services:
         communication-db:
-          image: robfontys/coin-vault-microservice-trade
+          image: robfontys/coin-vault-microservice-portfolio
           ports:
             - 5400:5400
 
