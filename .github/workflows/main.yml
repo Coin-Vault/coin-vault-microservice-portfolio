@@ -12,7 +12,15 @@ jobs:
       runs-on: ubuntu-latest
 
       services:
-        communication-db:
+        rabbitmq:
+          image: rabbitmq:3.8
+          env:
+            RABBITMQ_DEFAULT_USER: guest
+            RABBITMQ_DEFAULT_PASS: guest
+          ports:
+            - 5672
+      
+        portfolio:
           image: robfontys/coin-vault-microservice-portfolio
           ports:
             - 5400:5400
