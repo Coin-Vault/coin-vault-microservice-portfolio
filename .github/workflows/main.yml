@@ -47,6 +47,7 @@ jobs:
         uses: xt0rted/dotnet-format@v1
         with:
           only-changed-files: "true"
+          action: "fix"
           
   sonarcloud:
     name: SonarCloud
