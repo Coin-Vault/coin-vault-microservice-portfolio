@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace PortfolioService.Dtos
 {
     public class PortfolioCreateDto
-    {   
+    {
         [Required]
         public int TradeId { get; set; }
 
@@ -15,7 +15,7 @@ namespace PortfolioService.Dtos
 
         [Required]
         public double? Amount { get; set; }
-        
+
         [Required]
         public double? Price { get; set; }
     }

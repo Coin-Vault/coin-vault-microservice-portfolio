@@ -8,7 +8,7 @@ namespace PortfolioService.Models
         [Key]
         [Required]
         public int Id { get; set; }
-        
+
         [Required]
         public int TradeId { get; set; }
 
@@ -20,7 +20,7 @@ namespace PortfolioService.Models
 
         [Required]
         public double? Amount { get; set; }
-        
+
         [Required]
         public double? Price { get; set; }
     }

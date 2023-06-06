@@ -36,7 +36,8 @@ namespace PortfolioService.Controllers
 
             var trades = _repository.GetPortfolioByUserId(userId);
 
-            if (trades != null) {
+            if (trades != null)
+            {
                 return Ok(_mapper.Map<IEnumerable<PortfolioReadDto>>(trades));
             }
 
@@ -52,7 +53,7 @@ namespace PortfolioService.Controllers
 
             var portfolioReadDto = _mapper.Map<PortfolioReadDto>(portfolioModel);
 
-            return CreatedAtRoute(nameof(GetPortfolioByUserId), new { Id = portfolioReadDto.Id}, portfolioReadDto);
+            return CreatedAtRoute(nameof(GetPortfolioByUserId), new { Id = portfolioReadDto.Id }, portfolioReadDto);
         }
     }
 }

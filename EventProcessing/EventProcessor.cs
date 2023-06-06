@@ -30,7 +30,7 @@ namespace PortfolioService.EventProcessing
 
             var eventType = DetermineEvent(message);
 
-            switch(eventType)
+            switch (eventType)
             {
                 case EventType.TradePublish:
                     addTrade(message);
@@ -46,7 +46,7 @@ namespace PortfolioService.EventProcessing
 
             var eventType = JsonSerializer.Deserialize<GenericEventDto>(notificationMessage);
 
-            switch(eventType.Event)
+            switch (eventType.Event)
             {
                 case "Trade_Publish":
                     Console.WriteLine($"Trade publish event: {eventType.Event}");

@@ -12,7 +12,7 @@ namespace PortfolioService.Controllers
     {
         public TradesController()
         {
-            
+
         }
 
         [HttpPost]

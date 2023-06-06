@@ -69,8 +69,9 @@ namespace PortfolioService.AsyncDataServices
 
         public override void Dispose()
         {
-            if (_channel.IsOpen) { 
-                _channel.Close();   
+            if (_channel.IsOpen)
+            {
+                _channel.Close();
                 _connection.Close();
             }
 

@@ -8,12 +8,12 @@ namespace PortfolioService.Data
 
         public PortfolioRepo(AppDbContext context)
         {
-            _context = context;       
+            _context = context;
         }
 
         public void CreatePortfolio(Portfolio portfolio)
         {
-            if(portfolio == null)
+            if (portfolio == null)
             {
                 throw new ArgumentNullException(nameof(portfolio));
             }
@@ -33,7 +33,7 @@ namespace PortfolioService.Data
 
         public bool SaveChanges()
         {
-            return(_context.SaveChanges() >= 0);
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
