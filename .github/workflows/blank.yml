@@ -61,5 +61,5 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           # Change to 'master' if your main branch differs
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: development
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
