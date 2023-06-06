@@ -29,7 +29,9 @@ jobs:
         run: dotnet build --configuration Release --no-restore
         
       - name: Format
-        run: dotnet format --verify-no-changes  
+        uses: xt0rted/dotnet-format@v1
+        with:
+          only-changed-files: "false"
         
       - name: Test
         run: dotnet test --no-restore --verbosity normal
