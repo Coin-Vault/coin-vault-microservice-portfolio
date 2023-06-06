@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Microsoft.CodeAnalysis": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.5.0, )"
