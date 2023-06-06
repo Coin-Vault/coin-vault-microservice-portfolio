@@ -16,7 +16,7 @@ namespace PortfolioService.Data
         {
             if(!context.Portfolios.Any()) 
             {
-                Console.WriteLine("Seeding Data... new"); 
+                Console.WriteLine("Seeding Data..."); 
 
                 context.Portfolios.AddRange(
                     new Portfolio() 

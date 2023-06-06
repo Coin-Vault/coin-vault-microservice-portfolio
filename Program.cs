@@ -20,8 +20,19 @@ builder.Services.AddSingleton<IMessageBusEncryption, MessageBusEncryption>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("InMem"));
+if (builder.Environment.IsProduction())
+{
+    Console.WriteLine("Using MSSQL Server");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+        opt.UseSqlServer(builder.Configuration.GetConnectionString("TradesConn")));
+}
+
+if (builder.Environment.IsDevelopment())
+{
+    Console.WriteLine("Using InMem Server");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+        opt.UseInMemoryDatabase("InMem"));
+}
 
 builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
 {
