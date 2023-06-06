@@ -20,8 +20,7 @@ jobs:
       - name: .NET Format
         uses: zyactions/dotnet-format@v1
         with:
-          workspace: test
-          verify-no-changes: true
+          workspace: PortfolioService.csproj
           implicit-restore: true
       
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
