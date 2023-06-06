@@ -17,12 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: .NET Format
-        uses: zyactions/dotnet-format@v1
-        with:
-          workspace: PortfolioService.csproj
-          implicit-restore: true
-      
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:
