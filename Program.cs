@@ -1,7 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PortfolioService.AsyncDataServices;
+using PortfolioService.Auth;
 using PortfolioService.Data;
 using PortfolioService.EventProcessing;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +29,7 @@ if (builder.Environment.IsProduction())
 {
     Console.WriteLine("Using MSSQL Server");
     builder.Services.AddDbContext<AppDbContext>(opt =>
-        opt.UseSqlServer(builder.Configuration.GetConnectionString("TradesConn")));
+        opt.UseSqlServer(builder.Configuration.GetConnectionString("PortfoliosConn")));
 }
 
 if (builder.Environment.IsDevelopment())
@@ -41,6 +46,23 @@ builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+var domain = $"https://{builder.Configuration["Auth0:Domain"]}/";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+.AddJwtBearer(options =>
+{
+    options.Authority = $"https://{builder.Configuration["Auth0:Domain"]}/";
+    options.Audience = builder.Configuration["Auth0:Audience"];
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        NameClaimType = ClaimTypes.NameIdentifier
+    };
+});
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
 
 var app = builder.Build();
 
@@ -59,6 +81,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrepDb.PrepPopulation(app);
+PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 
 app.Run();

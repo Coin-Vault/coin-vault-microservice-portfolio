@@ -1,8 +1,5 @@
-using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PortfolioService.Data;
-using PortfolioService.Dtos;
-using PortfolioService.Models;
 
 namespace PortfolioService.Controllers
 {
@@ -15,6 +12,7 @@ namespace PortfolioService.Controllers
 
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult TestInboundConnection()
         {

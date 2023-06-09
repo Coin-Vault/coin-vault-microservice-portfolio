@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Auth",
     "\\Controllers",
     "\\Data",
     "\\Dtos",
@@ -9,6 +10,6 @@
     "\\Profiles",
     "\\Properties"
   ],
-  "SelectedNode": "\\PortfolioService.csproj",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

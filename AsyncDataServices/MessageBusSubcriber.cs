@@ -30,15 +30,18 @@ namespace PortfolioService.AsyncDataServices
 
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
+            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
             _channel.ExchangeDeclare(exchange: "trigger", type: ExchangeType.Fanout);
-            _queueName = _channel.QueueDeclare().QueueName;
+            _queueName = _channel.QueueDeclare("microservice1_queue", exclusive: false).QueueName; // Replace with a unique queue name for each microservice
+
+            // Bind the queue to the exchange using the corresponding routing key
             _channel.QueueBind(queue: _queueName,
                 exchange: "trigger",
-                routingKey: "");
+                routingKey: "microservice1"); // Replace with the unique routing key for this microservice
 
-            Console.WriteLine("Lissening to RabbitMQ messagebus");
+            Console.WriteLine("Listening to RabbitMQ message bus");
 
-            _connection.ConnectionShutdown += RabbitMQ_ConnectionShutDown;
+            _connection.ConnectionShutdown += RabbitMQ_ConnectionShutdown;
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -55,14 +58,16 @@ namespace PortfolioService.AsyncDataServices
                 var notificationMessage = Encoding.UTF8.GetString(body.ToArray());
 
                 _eventProcessor.ProcessEvent(notificationMessage);
+
+                _channel.BasicAck(ea.DeliveryTag, multiple: false);
             };
 
-            _channel.BasicConsume(queue: _queueName, autoAck: true, consumer: consumer);
+            _channel.BasicConsume(queue: _queueName, autoAck: false, consumer: consumer);
 
             return Task.CompletedTask;
         }
 
-        private void RabbitMQ_ConnectionShutDown(object sender, ShutdownEventArgs e)
+        private void RabbitMQ_ConnectionShutdown(object sender, ShutdownEventArgs e)
         {
             Console.WriteLine("Connection Shutdown");
         }

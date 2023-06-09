@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioService.Data;
 using PortfolioService.Dtos;
@@ -19,16 +20,7 @@ namespace PortfolioService.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<PortfolioReadDto>> GetPortfolios()
-        {
-            Console.WriteLine("Getting Portfolios");
-
-            var trades = _repository.GetAllPortfolios();
-
-            return Ok(_mapper.Map<IEnumerable<PortfolioReadDto>>(trades));
-        }
-
+        [Authorize]
         [HttpGet("{userId}", Name = "GetPortfolioByUserId")]
         public ActionResult<IEnumerable<PortfolioReadDto>> GetPortfolioByUserId(string userId)
         {
@@ -44,6 +36,7 @@ namespace PortfolioService.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult<PortfolioReadDto> CreatePortfolio(PortfolioCreateDto portfolioCreateDto)
         {

@@ -62,14 +62,18 @@ namespace PortfolioService.EventProcessing
             using (var scope = _scopedFactory.CreateScope())
             {
                 var repo = scope.ServiceProvider.GetRequiredService<IPortfolioRepo>();
-
                 var tradePublishDto = JsonSerializer.Deserialize<TradePublishDto>(tradePublishMessage);
 
                 try
                 {
-                    var portfolio = _mapper.Map<Portfolio>(tradePublishDto);
-
-                    repo.CreatePortfolio(portfolio);
+                    repo.CreatePortfolio(new Portfolio
+                    {
+                        TradeId = tradePublishDto.Id,
+                        UserId = tradePublishDto.UserId,
+                        Name = tradePublishDto.Name,
+                        Amount = tradePublishDto.Amount,
+                        Price = tradePublishDto.Price
+                    });
                     repo.SaveChanges();
 
                     Console.WriteLine($"Added trade to DB");

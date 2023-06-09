@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v7p5QmXTSPlnY1fBLFierCUjk9YcMRWfNuxV6FbejPx7p3aPG4Z1QJ4gEBRqE0MEgA9uC5GvYc0Ca8+fWJ5Zig==",
+  "dgSpecHash": "TPPGYTkIONQf4FZ4xqWrNAAvnrH10bOVTFrX2oBK1O1EDqvHz6FmzJl/apbDbIDm9CAuZPn3INkHQDYyIY7uTw==",
   "success": true,
   "projectFilePath": "D:\\School\\Fontys ICT\\Jaar 3\\Periode 6\\Individueelproject\\GitHub\\coin-vault-microservice-portfolio\\PortfolioService.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\robru\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\robru\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\robru\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\robru\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.5\\microsoft.aspnetcore.authentication.jwtbearer.7.0.5.nupkg.sha512",
     "C:\\Users\\robru\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\robru\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\robru\\.nuget\\packages\\microsoft.codeanalysis\\4.6.0\\microsoft.codeanalysis.4.6.0.nupkg.sha512",
