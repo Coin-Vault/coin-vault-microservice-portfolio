@@ -1,6 +1,9 @@
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\appsettings.Development.json
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\appsettings.json
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\appsettings.Production.json
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.runner.reporters.netcoreapp10.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.runner.utility.netcoreapp10.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\PortfolioService.exe
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\PortfolioService.deps.json
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\PortfolioService.runtimeconfig.json
@@ -58,6 +61,10 @@ D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-micro
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\System.Security.Permissions.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.abstractions.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.assert.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.core.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\xunit.execution.dotnet.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -169,3 +176,5 @@ D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-micro
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\PortfolioService.pdb
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\PortfolioService.genruntimeconfig.cache
 D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\obj\Debug\net7.0\ref\PortfolioService.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\Castle.Core.dll
+D:\School\Fontys ICT\Jaar 3\Periode 6\Individueelproject\GitHub\coin-vault-microservice-portfolio\bin\Debug\net7.0\Moq.dll
